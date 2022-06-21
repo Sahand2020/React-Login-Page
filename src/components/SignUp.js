@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
 
 import { validate } from "./validate";
 import { notify } from "./toast";
@@ -20,7 +21,7 @@ const SignUp = () => {
     const [touched, setTouched] = useState({});
 
     useEffect(() => {
-        setErrors(validate(data));
+        setErrors(validate(data, "signup"));
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [data, touched]);
 
@@ -30,7 +31,6 @@ const SignUp = () => {
         } else {
             setData({ ...data, [event.target.name]: event.target.value });
         }
-        console.log(data);
     };
 
     const focusHandler = (event) => {
@@ -143,7 +143,7 @@ const SignUp = () => {
                     )}
                 </div>
                 <div className={styles.formButtons}>
-                    <a href="#">Login</a>
+                    <Link to="/login">Login</Link>
                     <button type="submit">Sign Up</button>
                 </div>
             </form>
