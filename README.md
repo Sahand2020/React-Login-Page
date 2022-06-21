@@ -1,6 +1,6 @@
 # React-Login-Form
 
-This is a Login form made by React.js .
+This is a SPA Login/SignUp form made by React.js .
 
 <br/>
 
